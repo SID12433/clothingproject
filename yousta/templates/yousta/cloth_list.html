@@ -1,0 +1,33 @@
+{%extends 'yousta/base.html'%}
+
+{%block body_block%}
+
+<div class="container mt-2   d-flex flex-column align-items-center">
+    <table class="table mt-5  table-striped  p-4">
+        <tr>
+            <td>Name</td>
+            <td>Material</td>
+            <td>Brand</td>
+            <td>Image</td>
+            <td>Action</td>
+        </tr>
+        {%for cloth in cloths%}
+            <tr>
+                <td>{{cloth.name}}</td>
+                <td>{{cloth.material}}</td>
+                <td>{{cloth.brand}}</td>
+                <td>
+                    <img src="{{cloth.image.url}}" alt="" width="200px" height="250px">
+                </td>
+                <td>
+                    <a href="{%url 'cloth-edit' cloth.id%}" class="me-3"><i class="fa-solid fa-pen"></i></a>
+                    <a href="{%url 'add-varient' cloth.id%}" class="me-3"><i class="fa-solid fa-plus"></i></a>
+                    <a href="{%url 'cloth-detail' cloth.id%}" class="me-3"><i class="fa-solid fa-list"></i></a>
+                    <a href="{%url 'cloth-remove' cloth.id%}"><i class="fa-solid fa-trash" style="color: #e34635;"></i></a>
+                </td>
+            </tr>
+        {%endfor%}
+    </table>
+</div>
+
+{%endblock%}

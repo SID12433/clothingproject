@@ -1,0 +1,81 @@
+1)registration
+================
+
+url:http://127.0.0.1:8000/api/register
+method:post
+body:{"username","password","email","phone","address"}
+authorization:nill
+
+2)cloth list api
+================
+
+url:http://127.0.0.1:8000/api/cloths/
+method:get
+authorization: nill
+status: progress
+
+3)cloth details
+================
+
+url:http://127.0.0.1:8000/api/cloths/3/
+method: get
+
+4)Add to cart
+================
+
+url:http://127.0.0.1:8000/api/cloths/{varient_id}/cart_add/
+method:post
+authorization:username,password
+body:nill
+
+5)Cart list
+================
+
+url:http://127.0.0.1:8000/api/carts/
+method:get
+authorization:username,password
+
+6)Cart remove
+================
+
+url:http://127.0.0.1:8000/api/{cart_id}/
+method:delete
+authorization:username,password
+
+7)place order
+================
+
+url:http://127.0.0.1:8000/api/cloths/{varient_id}/place_order/
+method:post
+authorization:username,password
+body:address
+
+8)order list
+================
+
+url:http://127.0.0.1:8000/api/orders/
+method:get
+authorization:username,password
+
+9)order remove
+================
+
+url:http://127.0.0.1:8000/api/{order_id}/
+method:delete
+authorization:username,password
+
+10) Obtain Token
+================
+
+url:http://127.0.0.1:8000/api/token/
+method:post
+body: username,password
+header:nill
+
+11) Add review
+================
+
+url:http://127.0.0.1:8000/api/cloths/{cloth_id}/add_review/
+method:post
+body: rating,comment
+header:token
